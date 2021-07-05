@@ -5,19 +5,19 @@
 int main(int argc, char **argv)
 {
     ros::init(argc, argv, "add_two_ints_client");
-    if (argc != 3)
-    {
-        ROS_INFO("usage: add_two_ints_client X Y");
-        return 1;
-    }
+//    if (argc != 3)
+//    {
+//        ROS_INFO("usage: add_two_ints_client X Y");
+//        return 1;
+//    }
 
     ros::NodeHandle n;
     ros::ServiceClient client = n.serviceClient<beginner_tutorials::AddTwoInts>("add_two_ints");
     beginner_tutorials::AddTwoInts srv;
-    srv.request.a = atoll(argv[1]);
-    srv.request.b = atoll(argv[2]);
-    //srv.request.a = 12;
-    //srv.request.b = 13;
+//    srv.request.a = atoll(argv[1]);
+//    srv.request.b = atoll(argv[2]);
+    srv.request.a = 12;
+    srv.request.b = 13;
 
     if (client.call(srv))
     {
